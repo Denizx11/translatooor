@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 
 const OrderForm =({onOrder}) =>{
 
+    
     const {register, handleSubmit} = useForm()
 
     const onSubmit = (orderNotes) =>{onOrder(orderNotes)}
@@ -10,11 +11,11 @@ const OrderForm =({onOrder}) =>{
     return(
         <form onSubmit={ handleSubmit(onSubmit) }>
         <fieldset>
-            <label htmlFor="order-notes">Order Notes: </label>
-            <input type="text" {...register('orderNotes')} placeholder="No sugar, extra milk" />
+            <label htmlFor="orderNotes">Translation </label>
+            <input type="text" {...register('orderNotes')}
+             placeholder="Hello" />
         </fieldset>
-
-        <button type="submit">Order</button>
+        <button className="btn btn-primary" type="submit">Translate!</button>
         </form>
     )
 }

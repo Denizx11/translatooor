@@ -7,11 +7,11 @@ const Navbar = () => {
     return (
         <nav>
             {user !== null&&
-                <ul>
-                    <li>
+                <ul className="nav" >
+                    <li >
                         <NavLink to="/orders">Orders</NavLink>
-                    </li>
-                    <li>
+                    </li>&nbsp;
+                    <li >
                         <NavLink to="/profile">Profile</NavLink>
                     </li>
                 </ul>

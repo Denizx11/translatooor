@@ -6,7 +6,7 @@ const withAuth = Component => props =>{
     if(user !==null){
         return < Component{...props}/>
     }else{
-        return <Navigate to="/" />
+        return <Navigate to="/" />  
     }
 }
 

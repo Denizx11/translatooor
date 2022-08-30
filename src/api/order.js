@@ -1,21 +1,23 @@
-import { createHeaders } from "."
+import { createHeaders } from "./index"
 
-const  apiURL = process.env.REACT_APP_API_URL
+const  apiURL = process.env.REACT_APP_API_URL;
 
 export const orderAdd = async (user, order) =>{
-    try{
+    try{    
         const response = await fetch(`${apiURL}/${user.id}`,{
         method: 'PATCH',
-        headers: createHeaders,
+        headers: createHeaders(),
         body: JSON.stringify({
-            orders: [...user.order, order]
+            translations: [ ...user.translations, order ]
         })
     })
 
     if(!response.ok){
+        console.log("USER " + user.id);
         throw new Error("Could not update the order")
+        
     }
- 
+    
     const result = await response.json()
     return [null, result]
 }
@@ -30,9 +32,9 @@ export const orderClearHistory = async (userId) =>{
     try{
         const response = await fetch(`${apiURL}/${userId}`,{
             method: 'PATCH',
-            headers: createHeaders,
+            headers: createHeaders(),
             body: JSON.stringify({
-                orders:[]
+                translations:[]
             })
         })
 

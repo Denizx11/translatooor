@@ -1,15 +1,8 @@
-const OrdersCoffeeButton = ({coffee, onSelect}) => {
+const OrdersCoffeeButton = ({letter}) => {
+    const imgLetter ="/individual_signs/" + letter + ".png";
     return(
-        <button onClick={ () => onSelect(coffee.id)}>
-            <aside>
-                <img src={coffee.image} alt={coffee.name} width="55"/>
-            </aside>
-            <section>
-                <b>{ coffee.name }</b>
-            </section>
-        </button>
+         <img src={imgLetter} alt={letter+".png"}width="55"/>
     )
 }
-
 
 export default OrdersCoffeeButton

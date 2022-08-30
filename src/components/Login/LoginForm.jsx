@@ -47,7 +47,11 @@ const LoginForm = () => {
                 </fieldset>
 
                 <button type="submit" disabled = {loading}>Continue</button>
-                {loading  && <p>Logging in...</p>}
+                {loading  && 
+                <div className="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                }
                 { apiError && <p> {apiError}</p>}
             </form>
         </>

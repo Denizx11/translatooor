@@ -1,14 +1,29 @@
-const OrdersSummary = ({ coffee  }) => {
+import OrdersCoffeeButton from "./OrdersCoffeeButton"
 
-    return (
-        <section>
-            <h4>Order Summary</h4>
-            <div>
-                <img src={coffee.image} alt={coffee.name} width="55" />
-            </div>
-            <p>You are ordering a {coffee.name}</p>
-        </section>
-    )
+const OrdersSummary = ({ words }) => {
+    console.log(words + "orderssummary");
+    if(words){
+        const TranslateSentenceArray = Array.from(words)
+        console.log(words, "ordersummary");
+        return (
+            <fieldset>
+                <div>
+                    {TranslateSentenceArray.map((item,index) =>(
+                    <OrdersCoffeeButton key={index} letter={item}></OrdersCoffeeButton>))}
+                </div>&nbsp;
+            </fieldset>
+        )
+
+    }
+    else{
+        return(
+            <fieldset>
+                <div>
+                    Field is empty
+                </div>
+            </fieldset>
+        )
+    }
 
 }
 
