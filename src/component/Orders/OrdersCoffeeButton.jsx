@@ -1,5 +1,5 @@
 const OrdersCoffeeButton = ({letter}) => {
-    let format = /[ `!@#$%^&*()_+\-=\[\]{};1234567890æøå':"\\|,.<>\/?~]/;
+    let format = /[ `!@#$%^&*()_+\-=\[\]{};1234567890æøå':"\\|,.<>\/?~]/; //or a-z but thats too easy
     
     if(format.test(letter)) {
         return(
