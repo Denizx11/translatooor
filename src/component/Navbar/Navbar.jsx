@@ -9,7 +9,7 @@ const Navbar = () => {
             {user !== null&&
                 <ul className="nav" >
                     <li >
-                        <NavLink to="/orders">Orders</NavLink>
+                        <NavLink to="/orders">Translate</NavLink>
                     </li>&nbsp;
                     <li >
                         <NavLink to="/profile">Profile</NavLink>
